@@ -126,13 +126,13 @@
 		        url: "/open/ingredients?idProduit="+produit,
 		        dataType: "json",
 		        success: (result) => {
-		           let html = '';
+		           let html = '<ul>';
 		            
 		            result.forEach(ingredient => {
-		            	html +="<p>"+ingredient+"</p>";   
+		            	html +="<li>"+ingredient+"</li>";   
 		            	
 		            });
-		       
+		       			html+='</ul>'
 		            $("#contenuModal").html(html);
 		        }
 		    });

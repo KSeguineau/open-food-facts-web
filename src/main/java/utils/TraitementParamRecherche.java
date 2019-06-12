@@ -30,9 +30,11 @@ public class TraitementParamRecherche {
 	 */
 	public static HashMap<String, String> creationParamRecherche(HttpServletRequest req) {
 		HashMap<String, String> paramRecherche = new HashMap<>();
-
+		String marque = "";
 		String categorie = req.getParameter("categorie").replaceAll("'", "''");
-		String marque = req.getParameter("marque").replaceAll("'", "''");
+		if (req.getParameter("marque") != null) {
+			marque = req.getParameter("marque").replaceAll("'", "''");
+		}
 		String nom = req.getParameter("nom").replaceAll("'", "''");
 		String grade = req.getParameter("grade").replaceAll("'", "''");
 		String minEnergie = req.getParameter("minEnergie").replaceAll("'", "''");

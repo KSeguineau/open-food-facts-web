@@ -47,10 +47,11 @@ public class QueryUtils {
 			sb.append(" where ");
 			Map.Entry<String, String> me = (Map.Entry<String, String>) it.next();
 			sb.append(me.getKey()).append(me.getValue());
-		}
-		while (it.hasNext()) {
-			Map.Entry<String, String> me = (Map.Entry<String, String>) it.next();
-			sb.append(" and ").append(me.getKey()).append(me.getValue());
+
+			while (it.hasNext()) {
+				me = (Map.Entry<String, String>) it.next();
+				sb.append(" and ").append(me.getKey()).append(me.getValue());
+			}
 		}
 	}
 
